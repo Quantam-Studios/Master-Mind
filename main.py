@@ -26,7 +26,9 @@ def checkAnswerNum(answer):
 
 # style for colors
 colorCode = [f"{Fore.RED}", f"{Fore.GREEN}", f"{Fore.LIGHTYELLOW_EX}", f"{Fore.BLUE}", f"{Fore.MAGENTA}", f"{Fore.CYAN}", f"{Fore.WHITE}"]
+
 colors = ['red', 'green', 'yellow', 'blue', 'pink', 'cyan', 'white']
+
 def genRandColors():
   for i in range(0, 4):
     col = random.randrange(0, len(colors))
@@ -55,10 +57,11 @@ while True:
     code.clear()
   r = input(Style.RESET_ALL + "Type 'play' to begin: ")
   if r == 'play':
+    tries = 10
     mode = input("Type 'c' to play with colors or type 'n' for numbers: ")
     if mode == 'c':
       # color mode
-      print(Style.RESET_ALL + "Hi there user I have made a code that I bet you can't crack!\nHowever if you can I will tell the meaning of life itself... \nSomething that you humans have been trying to do since the dawn of humanity.\nWell anyways the code has been made and it's 4 colors you have " + str(tries) + " to guess the colors, and in the right order. \nGoodluck!")
+      print(Style.RESET_ALL + "Hi there user I have made a code that I bet you can't crack!\nHowever if you can I will tell the meaning of life itself... \nSomething that you humans have been trying to do since the dawn of humanity.\nWell anyways the code has been made and it's 4 colors you have " + str(tries) + " tries to guess the colors, and in the right order. \nGoodluck!")
       print("The list of colors you can guess are: ")
       z = 0
       for c in colors:
@@ -69,7 +72,7 @@ while True:
         answer = []
         i = 0
         while i < len(code):
-          ans = input("What is your guess? (type 1 color): ")
+          ans = input(Style.RESET_ALL + "What is your guess? (type 1 color): ")
           if ans == "-cheat":
             print(Style.RESET_ALL + "How'd you figure that out!\n Seriously who taught you that!\n Well fine here it is...")
             print(Back.RED + str(code))
@@ -87,7 +90,7 @@ while True:
       # number mode
       # get random code
       genRandNumbers()
-      print(Style.RESET_ALL + "Hi there user I have made a code that I bet you can't crack!\nHowever if you can I will tell the meaning of life itself... \nSomething that you humans have been trying to do since the dawn of humanity.\nWell anyways the code has been made and it's 4 digits you have " + str(tries) + " to guess the numbers, and in the right order. \nGoodluck!")
+      print(Style.RESET_ALL + "Hi there user I have made a code that I bet you can't crack!\nHowever if you can I will tell the meaning of life itself... \nSomething that you humans have been trying to do since the dawn of humanity.\nWell anyways the code has been made and it's 4 digits you have " + str(tries) + " tries to guess the numbers, and in the right order. \nGoodluck!")
       for n in range(0, tries):
         answer = []
         i = 0
